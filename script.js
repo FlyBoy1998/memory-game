@@ -18,3 +18,18 @@ function shuffleArray(array) {
   return array;
 }
 
+function displayCards() {
+    let duplicateCards = cards.concat(cards);
+    let shuffledCards = shuffleArray(duplicateCards);
+
+    shuffledCards.forEach((card) => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('item');
+        const image = document.createElement('img');
+        image.src = `./icons/${card}.png`;
+        cardElement.appendChild(image);
+        app.appendChild(cardElement);
+    })
+}
+
+displayCards();
