@@ -24,11 +24,36 @@ function displayCards() {
 
     shuffledCards.forEach((card) => {
         const cardElement = document.createElement('div');
-        cardElement.classList.add('item');
+        cardElement.className = 'item';
         const image = document.createElement('img');
         image.src = `./icons/${card}.png`;
         cardElement.appendChild(image);
         app.appendChild(cardElement);
+
+        cardElement.onclick = function() {
+            this.classList.add('cardOpen');
+            setTimeout(() => {
+                let cardOpen = app.querySelectorAll('.cardOpen');
+                let cardMatch = app.querySelectorAll('.cardMatch');
+                if(cardOpen.length > 1) {
+                    if(cardOpen[0].innerHTML === cardOpen[1].innerHTML) {
+                        cardOpen[0].classList.add('cardMatch');
+                        cardOpen[1].classList.add('cardMatch');
+
+                        cardOpen[1].classList.remove('cardOpen');
+                        cardOpen[0].classList.remove('cardOpen');
+
+                    if(cardMatch.length == duplicateCards.length) {
+                        alert('Nice job!');
+                    }
+                } else {
+                    cardOpen[0].classList.remove('cardOpen');
+                    cardOpen[1].classList.remove('cardOpen');
+                }
+            }
+            }, 1000);
+            
+        }
     })
 }
 
