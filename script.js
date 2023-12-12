@@ -57,4 +57,10 @@ function displayCards() {
     })
 }
 
+function reset() {
+    app.innerHTML = ' ';
+    displayCards();
+}
+
+resetBtn.addEventListener('click', reset);
 displayCards();
