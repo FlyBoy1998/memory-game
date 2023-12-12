@@ -17,8 +17,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 440px;
-    min-width: 440px;
     padding: 40px 60px;
     gap: 30px;
     background-color: #4B527E;
@@ -33,8 +31,24 @@ h1 {
 .app {
     display: flex;
     flex-wrap: wrap;
-    height: 400px;
-    width: 400px;
+    height: 440px;
+    width: 440px;
+    gap: 10px;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: #7C81AD;
+}
+
+img {
+    width: 60px;
+    height: 60px;
 }
 
 .reset {
