@@ -43,7 +43,7 @@ function displayCards() {
                         cardOpen[1].classList.remove('cardOpen');
                         cardOpen[0].classList.remove('cardOpen');
 
-                    if(cardMatch.length == duplicateCards.length) {
+                    if(cardMatch.length == duplicateCards.length - 2) {
                         alert('Nice job!');
                     }
                 } else {
